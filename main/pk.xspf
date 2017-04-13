@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<title>Playlist</title>
+	<trackList>
+		<track>
+			<location>file:///home/rajat/Downloads/Main%20Faraar%20Sa.mp3</location>
+			<title>Main Faraar Sa - PagalWorld.me</title>
+			<creator>Anupam Roy, Hamsika Iyer (PagalWorld.me)</creator>
+			<album>Running Shaadi.Com (PagalWorld.me)</album>
+			<trackNum>6</trackNum>
+			<image>file:///home/rajat/.cache/vlc/art/artistalbum/Anupam%20Roy%2C%20Hamsika%20Iyer%20%28PagalWorld.me%29/Running%20Shaadi.Com%20%28PagalWorld.me%29/art.jpg</image>
+			<duration>301740</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>0</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///home/rajat/Downloads/Faraar.mp3</location>
+			<title>Faraar - PagalWorld.me</title>
+			<creator>Jubin Nautiyal (PagalWorld.me)</creator>
+			<album>Running Shaadi.Com (PagalWorld.me)</album>
+			<trackNum>5</trackNum>
+			<image>file:///home/rajat/.cache/vlc/art/artistalbum/Jubin%20Nautiyal%20%28PagalWorld.me%29/Running%20Shaadi.Com%20%28PagalWorld.me%29/art.jpg</image>
+			<duration>358114</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>1</vlc:id>
+			</extension>
+		</track>
+		<track>
+			<location>file:///home/rajat/Downloads/Dimpi%20De%20Naal%20Bhaage%20Bunty.mp3</location>
+			<title>Dimpi De Naal Bhaage Bunty - PagalWorld.me</title>
+			<creator>Labh Janjua - PagalWorld.me</creator>
+			<album>RunningShaadi.com</album>
+			<image>file:///home/rajat/.cache/vlc/art/artistalbum/Labh%20Janjua%20-%20PagalWorld.me/RunningShaadi.com/art.jpg</image>
+			<duration>216895</duration>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:id>2</vlc:id>
+			</extension>
+		</track>
+	</trackList>
+	<extension application="http://www.videolan.org/vlc/playlist/0">
+			<vlc:item tid="0"/>
+			<vlc:item tid="1"/>
+			<vlc:item tid="2"/>
+	</extension>
+</playlist>
