@@ -26,8 +26,8 @@ class vlc_smart:
             self.bool_pip = False
         
         # exit if anyone's missing
-        if(self.bool_vlc == False | self.bool_pip == False):
-            exit(0);
+        if self.bool_vlc == False or self.bool_pip == False:
+            exit(0)
         
         # install and import
         vlc_smart.install_and_import(self, "pyaudio")
@@ -71,15 +71,15 @@ class vlc_client:
             t.start()
         except:
             print("Error hosting vlc on said port. Try changing socket port in settings")
-            exit(0);           
+            exit(0) 
         
-        disp_once = False;
+        disp_once = False
         while True:
             try:
                 self.socket_object = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 self.socket_object.connect(('localhost', port))
                 print("Connected")
-                self.socket_connected = True;
+                self.socket_connected = True
                 break
             except:
                 if(disp_once == False):
@@ -87,10 +87,10 @@ class vlc_client:
                     disp_once = True
         
     def vlc_process(self, the_port=4200, playlist=""):
-        os.system("vlc --extraintf rc --rc-host localhost:" + the_port.__str__() + " " + playlist);        
+        os.system("vlc --extraintf rc --rc-host localhost:" + the_port.__str__() + " " + playlist)     
         
     def play(self):
-        new_time = time.time();
+        new_time = time.time()
         while True:
             if(time.time() - new_time > self.wait_time):
                 break            
@@ -101,7 +101,7 @@ class vlc_client:
         self.socket_object.sendall(cmd.encode())
     
     def pause(self):
-        new_time = time.time();
+        new_time = time.time()
         while True:
             if(time.time() - new_time > self.wait_time):
                 break            
@@ -112,7 +112,7 @@ class vlc_client:
         self.socket_object.sendall(cmd.encode())
     
     def next(self):
-        new_time = time.time();
+        new_time = time.time()
         while True:
             if(time.time() - new_time > self.wait_time):
                 break            
@@ -123,7 +123,7 @@ class vlc_client:
         self.socket_object.sendall(cmd.encode())
     
     def previous(self):
-        new_time = time.time();
+        new_time = time.time()
         while True:
             if(time.time() - new_time > self.wait_time):
                 break            
@@ -150,32 +150,32 @@ class sr_client:
         self.recog_obj = globals()["speech_recognition"].Recognizer()
         
     def sound_recognise(self):
-        global flag;
+        global flag
         try:
             with globals()["speech_recognition"].Microphone() as source:
                 print("Your Command:")
                 audio = self.recog_obj.listen(source)
             print audio
             return_val = "error"
-            return_val = self.recog_obj.recognize_google(audio);
-            flag = 1;
+            return_val = self.recog_obj.recognize_google(audio)
+            flag = 1
             print("You said: " + return_val)            
         except globals()["speech_recognition"].UnknownValueError:
-            flag = 1;
+            flag = 1
             print("Please Say again:")            
         except globals()["speech_recognition"].RequestError as e:
-            flag = 1;
+            flag = 1
             print("Connection error,check your Connectivity;\n {0}".format(e))    
         except Exception as e:
-            flag = 1;
+            flag = 1
             print("Some error Occured...Continue...")        
-        flag = 1;
+        flag = 1
         return return_val
 
 def main():
     enough = False
     try:
-        vlc_smart();
+        vlc_smart()
     except Exception as e:
         print("Error Occured")
     finally:
@@ -185,7 +185,7 @@ def main():
         while(True):
             print 'Hey'
             if flag == 1:
-                flag = 0;
+                flag = 0
                 word = sr.sound_recognise()
                 if(word == "activate"):
                     enough = False
@@ -202,6 +202,6 @@ def main():
                 if word == "previous":
                     vc.previous()   
                 if word == "stop":
-                    vc.stop();
+                    vc.stop()
             
 main()
